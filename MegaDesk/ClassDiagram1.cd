@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MegaDesk.Form1" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MegaDesk.Desk">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAIABAAAA=</HashCode>
+      <FileName>Desk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MegaDesk.DeskQuote">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAABAAAAAIAAAEQBAAEAAAAAAgA=</HashCode>
+      <FileName>DeskQuote.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MegaDesk.productionTime">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAABAAAAAAAAAgAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>productionTime.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MegaDesk.material">
+    <Position X="3.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAgAAAABAAAAAAAABAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>material.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
