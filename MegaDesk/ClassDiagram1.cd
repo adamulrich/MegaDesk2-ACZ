@@ -15,21 +15,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MegaDesk.DeskQuote">
-    <Position X="5.25" Y="1" Width="1.5" />
+    <Position X="5.25" Y="1" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAAAABAAAAAIAAAEQBAAEAAAAAAgA=</HashCode>
+      <HashCode>AAABAAAACAAAIAIAECABAAAIAIAAAEABAAkAAAEAAgA=</HashCode>
       <FileName>DeskQuote.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="MegaDesk.productionTime">
-    <Position X="5.25" Y="4.5" Width="1.5" />
+    <Position X="7.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAABAAAAAAAAAgAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>productionTime.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="MegaDesk.material">
-    <Position X="3.5" Y="4.5" Width="1.5" />
+    <Position X="3.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAgAAAABAAAAAAAABAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>material.cs</FileName>
