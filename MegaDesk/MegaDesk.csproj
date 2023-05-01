@@ -76,6 +76,9 @@
     <Compile Include="ViewAllQuotes.Designer.cs">
       <DependentUpon>ViewAllQuotes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -84,6 +87,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
@@ -98,6 +102,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\desk-icon.png" />
+    <None Include="resources\images\receipt_long_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Include="resources\images\add_circle_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Include="resources\images\logout_FILL0_wght400_GRAD0_opsz48.png" />
+    <Content Include="resources\images\request_quote_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Include="resources\images\search_FILL0_wght400_GRAD0_opsz48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
