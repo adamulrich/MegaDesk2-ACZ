@@ -54,10 +54,7 @@ namespace MegaDesk
 
             // if large, then add extra
             int deskSize = this.desk.depth * this.desk.width;
-            if (deskSize > SURFACE_AREA_COST_INCREASE_SIZE)
-            {
-                deskPrice += (deskSize - SURFACE_AREA_COST_INCREASE_SIZE) * EXTRA_SURFACE_AREA_COST;
-            }
+            deskPrice += Math.Max(deskSize - SURFACE_AREA_COST_INCREASE_SIZE,0) * EXTRA_SURFACE_AREA_COST;
 
             // add production cost based on size
             // should resolve to 0, 1, 2
