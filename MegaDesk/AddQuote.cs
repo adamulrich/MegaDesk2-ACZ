@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace MegaDesk
 {
-    public partial class DisplayQuote : Form
+    public partial class AddQuote : Form
     {
-        public DisplayQuote()
+        public AddQuote()
         {
             InitializeComponent();
+        }
+
+        private void btn_mainMenu_Click(object sender, EventArgs e)
+        {
+            MainMenu MainMenuForm = (MainMenu)this.Tag;
+            MainMenuForm.Show();
+            this.Hide();
+            this.Close();
         }
     }
 }

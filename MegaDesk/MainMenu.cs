@@ -16,5 +16,19 @@ namespace MegaDesk
         {
             InitializeComponent();
         }
+
+        private void btn_addQuote_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Hide();
+            AddQuote AddQuoteForm = new AddQuote();
+            AddQuoteForm.Tag = this;
+            AddQuoteForm.Show();
+            
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
