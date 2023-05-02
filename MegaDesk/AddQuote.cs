@@ -36,17 +36,25 @@ namespace MegaDesk
 
         public void updateQuote()
         {
-            desk.depth = (int)this.num_Depth.Value;
-            desk.width = (int)this.num_Width.Value;
-            desk.drawer_count = (int)this.num_DrawerCount.Value;
-            desk.material = (material)this.cbo_MaterialType.SelectedItem;
-            deskQuote.desk = this.desk;
-            deskQuote.customerName = (string)this.text_CustomerName.Text;
-            deskQuote.Date = DateTime.Now;
-            deskQuote.productionTime = (productionTime)this.cbo_DeliverySpeed.SelectedItem;
-            deskQuote.calculatePrice();
-            this.lbl_Price.Text = deskQuote.price.ToString();
-            
+            try
+            {
+                desk.depth = (int)this.num_Depth.Value;
+                desk.width = (int)this.num_Width.Value;
+                desk.drawer_count = (int)this.num_DrawerCount.Value;
+                desk.material = (material)this.cbo_MaterialType.SelectedItem;
+                deskQuote.desk = this.desk;
+                deskQuote.customerName = (string)this.text_CustomerName.Text;
+                deskQuote.Date = DateTime.Now;
+                deskQuote.productionTime = (productionTime)this.cbo_DeliverySpeed.SelectedItem;
+                deskQuote.calculatePrice();
+                this.lbl_Price.Text = deskQuote.price.ToString();
+            }
+            catch (Exception e)
+            {
+                // unable to calculate price
+                this.lbl_Price.Text = "Unable to Calculate";
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -41,9 +41,9 @@
             this.num_DrawerCount = new System.Windows.Forms.NumericUpDown();
             this.num_Width = new System.Windows.Forms.NumericUpDown();
             this.num_Depth = new System.Windows.Forms.NumericUpDown();
+            this.lbl_Price = new System.Windows.Forms.Label();
             this.btn_mainMenu = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.lbl_Price = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.num_DrawerCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Width)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Depth)).BeginInit();
@@ -77,6 +77,7 @@
             // 
             // cbo_MaterialType
             // 
+            this.cbo_MaterialType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_MaterialType.FormattingEnabled = true;
             this.cbo_MaterialType.Location = new System.Drawing.Point(130, 69);
             this.cbo_MaterialType.Name = "cbo_MaterialType";
@@ -121,6 +122,8 @@
             // 
             // cbo_DeliverySpeed
             // 
+            this.cbo_DeliverySpeed.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_DeliverySpeed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_DeliverySpeed.FormattingEnabled = true;
             this.cbo_DeliverySpeed.Location = new System.Drawing.Point(130, 256);
             this.cbo_DeliverySpeed.Name = "cbo_DeliverySpeed";
@@ -183,6 +186,15 @@
             0,
             0});
             // 
+            // lbl_Price
+            // 
+            this.lbl_Price.AutoSize = true;
+            this.lbl_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Price.Location = new System.Drawing.Point(114, 394);
+            this.lbl_Price.Name = "lbl_Price";
+            this.lbl_Price.Size = new System.Drawing.Size(0, 25);
+            this.lbl_Price.TabIndex = 9;
+            // 
             // btn_mainMenu
             // 
             this.btn_mainMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -210,15 +222,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lbl_Price
-            // 
-            this.lbl_Price.AutoSize = true;
-            this.lbl_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Price.Location = new System.Drawing.Point(114, 394);
-            this.lbl_Price.Name = "lbl_Price";
-            this.lbl_Price.Size = new System.Drawing.Size(0, 25);
-            this.lbl_Price.TabIndex = 9;
             // 
             // AddQuote
             // 
