@@ -36,10 +36,6 @@ namespace MegaDesk
 
         };
 
-
-
-
-
         public string customerName { get; set; } = "";
 
         public productionTime productionTime { get; set; }
@@ -53,7 +49,7 @@ namespace MegaDesk
         {
             // calculate size of desk and drawers and material
             int deskPrice = BASE_COST + 
-                            this.desk.drawer_count * DRAWER_COST +
+                            (this.desk.drawer_count * DRAWER_COST ) +
                             materialCost[this.desk.material];
 
             // if large, then add extra
@@ -64,18 +60,12 @@ namespace MegaDesk
             }
 
             // add production cost based on size
-            int rushIndex = SMALL_SIZE;
-            if (deskSize > 2000)
-            {
-                rushIndex = LARGE_SIZE;
-            }
-            else if (deskSize > 1000)
-            {
-                rushIndex = MEDIUM_SIZE;
-            }
+            // should resolve to 0, 1, 2
+            int rushIndex = Math.Min((int)(deskSize / 1000), 2);
 
             deskPrice += rushCost[this.productionTime][rushIndex];
 
+            // set price
             this.price = deskPrice;
 
         }

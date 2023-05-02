@@ -249,6 +249,7 @@
             this.MinimizeBox = false;
             this.Name = "AddQuote";
             this.Text = "Add Quote";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddQuote_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.num_DrawerCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Width)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Depth)).EndInit();
