@@ -67,7 +67,6 @@ namespace MegaDesk
 
             // set price
             this.price = deskPrice;
-
         }
 
         public void saveQuote()
