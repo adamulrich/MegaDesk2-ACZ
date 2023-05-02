@@ -36,49 +36,18 @@ namespace MegaDesk
 
         };
 
-        //new int[] { 60, 70, 80 };
 
 
 
-        public string customerName
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
-        public productionTime productionTime
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public string customerName { get; set; } = "";
 
-        public float price
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public productionTime productionTime { get; set; }
 
-        public Desk desk
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public float price { get; set; }
+        public Desk desk { get; set; } = new Desk();
 
-        public DateTime Date
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public DateTime Date { get; set; }
 
         public void calculatePrice()
         {
@@ -106,6 +75,8 @@ namespace MegaDesk
             }
 
             deskPrice += rushCost[this.productionTime][rushIndex];
+
+            this.price = deskPrice;
 
         }
 

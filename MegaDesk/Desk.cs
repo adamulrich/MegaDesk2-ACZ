@@ -7,36 +7,12 @@ namespace MegaDesk
 {
     public class Desk
     {
-        public int width
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public int width { get; set; }
 
-        public int depth
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public int depth { get; set; }
 
-        public int drawer_count
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public int drawer_count { get; set; }
 
-        public material material
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public material material { get; set; } 
     }
 }

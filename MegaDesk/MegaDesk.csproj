@@ -111,6 +111,7 @@
     <None Include="resources\images\receipt_long_FILL0_wght400_GRAD0_opsz48.png" />
     <None Include="resources\images\add_circle_FILL0_wght400_GRAD0_opsz48.png" />
     <None Include="resources\images\logout_FILL0_wght400_GRAD0_opsz48.png" />
+    <Content Include="resources\images\close_FILL0_wght400_GRAD0_opsz48.png" />
     <Content Include="resources\images\request_quote_FILL0_wght400_GRAD0_opsz48.png" />
     <None Include="resources\images\search_FILL0_wght400_GRAD0_opsz48.png" />
   </ItemGroup>
