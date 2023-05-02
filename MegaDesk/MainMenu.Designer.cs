@@ -74,6 +74,7 @@
             this.btn_viewQuote.Text = "&View Quotes";
             this.btn_viewQuote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_viewQuote.UseVisualStyleBackColor = true;
+            this.btn_viewQuote.Click += new System.EventHandler(this.btn_viewQuote_Click);
             // 
             // btn_exit
             // 
@@ -102,6 +103,7 @@
             this.btn_searchQuotes.Text = "&Search Quotes";
             this.btn_searchQuotes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_searchQuotes.UseVisualStyleBackColor = true;
+            this.btn_searchQuotes.Click += new System.EventHandler(this.btn_searchQuotes_Click);
             // 
             // MainMenu
             // 

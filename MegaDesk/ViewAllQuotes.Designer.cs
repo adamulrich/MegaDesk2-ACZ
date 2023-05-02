@@ -28,10 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ViewAllQuotes
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ViewAllQuotes";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ViewAllQuotes";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "View All Quotes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewAllQuotes_FormClosing);
+            this.Load += new System.EventHandler(this.ViewAllQuotes_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
