@@ -13,10 +13,6 @@ namespace MegaDesk
         int SURFACE_AREA_COST_INCREASE_SIZE = 1000;
         int EXTRA_SURFACE_AREA_COST = 1;
         int DRAWER_COST = 50;
-        int SMALL_SIZE = 0;
-        int MEDIUM_SIZE = 1;
-        int LARGE_SIZE = 2;
-
 
         Dictionary<material, int> materialCost = new Dictionary<material, int>()
         {
