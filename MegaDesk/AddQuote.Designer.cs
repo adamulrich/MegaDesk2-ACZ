@@ -67,6 +67,8 @@
             this.text_CustomerName.Name = "text_CustomerName";
             this.text_CustomerName.Size = new System.Drawing.Size(230, 26);
             this.text_CustomerName.TabIndex = 1;
+            this.text_CustomerName.WordWrap = false;
+            this.text_CustomerName.Enter += new System.EventHandler(this.text_CustomerName_Enter);
             // 
             // lbl_Material
             // 
@@ -151,6 +153,7 @@
             this.num_DrawerCount.Name = "num_DrawerCount";
             this.num_DrawerCount.Size = new System.Drawing.Size(232, 26);
             this.num_DrawerCount.TabIndex = 3;
+            this.num_DrawerCount.Enter += new System.EventHandler(this.num_DrawerCount_Enter);
             // 
             // num_Width
             // 
@@ -174,6 +177,7 @@
             0,
             0,
             0});
+            this.num_Width.Enter += new System.EventHandler(this.num_Width_Enter);
             // 
             // num_Depth
             // 
@@ -197,6 +201,7 @@
             0,
             0,
             0});
+            this.num_Depth.Enter += new System.EventHandler(this.num_Depth_Enter);
             // 
             // lbl_Price
             // 
@@ -263,7 +268,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(514, 753);
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(514, 753);
             this.Name = "AddQuote";
             this.Text = "Add Quote";

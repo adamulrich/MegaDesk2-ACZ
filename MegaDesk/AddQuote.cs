@@ -68,5 +68,45 @@ namespace MegaDesk
             MainMenuForm.Show();
             this.Hide();
         }
+
+        private void text_CustomerName_Enter(object sender, EventArgs e)
+        {
+            setFocusTextBox(sender, e);
+        }
+
+        private void num_DrawerCount_Enter(object sender, EventArgs e)
+        {
+            setFocusNumericUpDown(sender, e);
+        }
+
+        private void num_Width_Enter(object sender, EventArgs e)
+        {
+            setFocusNumericUpDown(sender, e);
+        }
+
+        private void num_Depth_Enter(object sender, EventArgs e)
+        {
+            setFocusNumericUpDown(sender, e);
+        }
+        private void setFocusNumericUpDown(object sender, EventArgs e)
+        {
+            NumericUpDown answerBox = sender as NumericUpDown;
+
+            if (answerBox != null)
+            {
+                int lengthOfAnswer = answerBox.Value.ToString().Length;
+                answerBox.Select(0, lengthOfAnswer);
+            }
+        }
+        private void setFocusTextBox(object sender, EventArgs e)
+        {
+            TextBox TextField = sender as TextBox;
+
+            if (TextField != null)
+            {
+                int lengthOfAnswer = TextField.Text.Length;
+                TextField.Select(0, lengthOfAnswer);
+            }
+        }
     }
 }
