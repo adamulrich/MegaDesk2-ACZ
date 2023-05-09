@@ -13,4 +13,14 @@ namespace MegaDesk
         Rosewood,
         Veneer
     }
+
+    public enum filterByMaterial
+    {
+        Oak,
+        Laminate,
+        Pine,
+        Rosewood,
+        Veneer, 
+        None
+    }
 }

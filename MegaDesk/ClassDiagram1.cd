@@ -17,9 +17,20 @@
   <Class Name="MegaDesk.DeskQuote">
     <Position X="5.25" Y="1" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAABAAAACAAAIAIAECABAAAIAIAAAEABAAkAAAEAAgA=</HashCode>
+      <HashCode>AAABAAAAAAAAAAIAECABAAAIAIAAAEABAAkAAAAAAgA=</HashCode>
       <FileName>DeskQuote.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="MegaDesk.JsonPersistence">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAACQAAAAAAAAA=</HashCode>
+      <FileName>JsonPersistence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
   </Class>
   <Enum Name="MegaDesk.productionTime">
     <Position X="7.75" Y="3.75" Width="1.5" />

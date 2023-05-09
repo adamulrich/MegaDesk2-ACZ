@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaDesk", "MegaDesk\MegaDesk.csproj", "{1C46EA42-36E2-42DB-AE02-E5A99E3898F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{B3A9F332-AA2B-45B2-A59D-8DD69A36BBEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1C46EA42-36E2-42DB-AE02-E5A99E3898F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C46EA42-36E2-42DB-AE02-E5A99E3898F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C46EA42-36E2-42DB-AE02-E5A99E3898F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A9F332-AA2B-45B2-A59D-8DD69A36BBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A9F332-AA2B-45B2-A59D-8DD69A36BBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A9F332-AA2B-45B2-A59D-8DD69A36BBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A9F332-AA2B-45B2-A59D-8DD69A36BBEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
