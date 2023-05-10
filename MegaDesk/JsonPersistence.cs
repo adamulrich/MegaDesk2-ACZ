@@ -20,8 +20,7 @@ namespace MegaDesk
         const string defaultFileName = "quotes.json";
 
 
-        
-        
+
         /// <summary>
         /// 
         /// This method returns a list of DeskQuotes from the default file. 
@@ -35,15 +34,29 @@ namespace MegaDesk
         /// 
         public List<DeskQuote> LoadQuotes(string fileName = defaultFileName, filterByMaterial filterMaterial = filterByMaterial.None)
         {
-            string fileData = File.ReadAllText(fileName);
+            string fileData = "";
+            List<DeskQuote> quotes = new List<DeskQuote>();
 
-            // deserialize
-            List<DeskQuote> quotes = JsonConvert.DeserializeObject<DeskQuote[]>(fileData).ToList();
+            try
+            {
+                // load file
+                 fileData = File.ReadAllText(fileName);
+
+                // deserialize
+                quotes = JsonConvert.DeserializeObject<DeskQuote[]>(fileData).ToList();
+
+            }
+            catch { 
+                
+        
+            }
+            
+
 
             if (filterMaterial != filterByMaterial.None)
             {
                 // filter
-                List<DeskQuote> filteredQuotes = quotes.Where(q => q.desk.material.Equals(filterMaterial)).ToList();
+                List<DeskQuote> filteredQuotes = quotes.Where(q => q.desk.material.ToString() == filterMaterial.ToString()).ToList();
                 return filteredQuotes;
 
             } else
