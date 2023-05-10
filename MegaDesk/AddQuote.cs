@@ -20,9 +20,9 @@ namespace MegaDesk
         public AddQuote()
         {
             InitializeComponent();
-            cbo_MaterialType.DataSource = Enum.GetValues(typeof(material));
+            cbo_MaterialType.DataSource = Enum.GetValues(typeof(material)).Cast<material>().ToList();
             cbo_MaterialType.SelectedIndex = ((int)material.Pine); // set default value to pine
-            cbo_DeliverySpeed.DataSource = Enum.GetValues(typeof(productionTime));
+            cbo_DeliverySpeed.DataSource = Enum.GetValues(typeof(productionTime)).Cast<productionTime>().ToList();
             cbo_DeliverySpeed.SelectedIndex = Array.IndexOf(Enum.GetValues(productionTime.normal.GetType()), productionTime.normal);
         }
 
