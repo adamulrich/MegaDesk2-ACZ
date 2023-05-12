@@ -40,7 +40,7 @@ namespace MegaDesk
         public float price { get; set; }
         public Desk desk { get; set; } = new Desk();
 
-        public DateTime Date { get; set; }
+        public DateTime date { get; set; }
 
         public void calculatePrice()
         {

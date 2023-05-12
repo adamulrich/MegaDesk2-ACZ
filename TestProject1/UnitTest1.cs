@@ -22,13 +22,13 @@ namespace TestProject1
             
             DeskQuote quote = new DeskQuote();
 
-            quote.customerName = "Foo Bar";
-            quote.desk.depth = 24;
-            quote.desk.width = 36;
-            quote.desk.material = material.Pine;
-            quote.desk.drawer_count = 1;
-            quote.Date = DateTime.Now;
-            quote.productionTime = productionTime.normal;
+            quote.customerName = TestHelpers.RandomString(16);
+            quote.desk.depth = TestHelpers.random.Next(12, 48);
+            quote.desk.width = TestHelpers.random.Next(24, 96);
+            quote.desk.material = TestHelpers.RandomEnumValue<material>();
+            quote.desk.drawer_count = TestHelpers.random.Next(0, 7);
+            quote.date = DateTime.Now;
+            quote.productionTime = TestHelpers.RandomEnumValue<productionTime>();
             quote.calculatePrice();
             
             jp.AddToFile(quote);
@@ -41,7 +41,7 @@ namespace TestProject1
             Assert.That(quote.desk.width == lastQuote.desk.width, "desk width Not Equal");
             Assert.That(quote.desk.material == lastQuote.desk.material, "desk material Not Equal");
             Assert.That(quote.desk.drawer_count == lastQuote.desk.drawer_count, "desk drawer count Not Equal");
-            Assert.That(quote.Date == lastQuote.Date, "date Not Equal");
+            Assert.That(quote.date == lastQuote.date, "date Not Equal");
             Assert.That(quote.productionTime == lastQuote.productionTime, "production time Not Equal");
 
 

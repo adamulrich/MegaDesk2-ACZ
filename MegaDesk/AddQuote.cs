@@ -44,7 +44,7 @@ namespace MegaDesk
                 desk.material = (material)this.cbo_MaterialType.SelectedItem;
                 deskQuote.desk = this.desk;
                 deskQuote.customerName = (string)this.text_CustomerName.Text;
-                deskQuote.Date = DateTime.Now;
+                deskQuote.date = DateTime.Now;
                 deskQuote.productionTime = (productionTime)this.cbo_DeliverySpeed.SelectedItem;
                 deskQuote.calculatePrice();
                 this.lbl_Price.Text = deskQuote.price.ToString();
