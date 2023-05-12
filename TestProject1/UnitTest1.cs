@@ -1,6 +1,8 @@
 
 using MegaDesk;
 using NUnit.Framework;
+using System.Globalization;
+
 
 namespace TestProject1
 {
@@ -16,22 +18,25 @@ namespace TestProject1
         }
 
         [Test]
-        public void SaveToFileLoadFromFile()
+        public void SaveToFile_LoadFromFile()
         {
             MegaDesk.JsonPersistence jp = new MegaDesk.JsonPersistence();
             
             DeskQuote quote = new DeskQuote();
 
-            quote.customerName = TestHelpers.RandomString(16);
-            quote.desk.depth = TestHelpers.random.Next(12, 48);
-            quote.desk.width = TestHelpers.random.Next(24, 96);
+            var textInfo = new CultureInfo("en-US", false).TextInfo;
+
+
+            quote.customerName = textInfo.ToTitleCase(TestHelpers.RandomString(TestHelpers.random.Next(3, 10)))  + " " + textInfo.ToTitleCase(TestHelpers.RandomString(TestHelpers.random.Next(3, 10)));
+            quote.desk.depth = TestHelpers.random.Next(12, 49);
+            quote.desk.width = TestHelpers.random.Next(24, 97);
             quote.desk.material = TestHelpers.RandomEnumValue<material>();
-            quote.desk.drawer_count = TestHelpers.random.Next(0, 7);
+            quote.desk.drawer_count = TestHelpers.random.Next(0, 8);
             quote.date = DateTime.Now;
             quote.productionTime = TestHelpers.RandomEnumValue<productionTime>();
             quote.calculatePrice();
             
-            jp.AddToFile(quote);
+            jp.AddQuoteToFile(quote);
 
             List<DeskQuote> quoteData = jp.LoadQuotes();
             DeskQuote lastQuote = quoteData.Last();

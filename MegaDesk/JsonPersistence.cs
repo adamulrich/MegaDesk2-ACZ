@@ -20,7 +20,6 @@ namespace MegaDesk
         const string defaultFileName = "quotes.json";
 
 
-
         /// <summary>
         /// 
         /// This method returns a list of DeskQuotes from the default file. 
@@ -40,25 +39,18 @@ namespace MegaDesk
             try
             {
                 // load file
-                 fileData = File.ReadAllText(fileName);
+                fileData = readTextFile(fileName);
 
                 // deserialize
                 quotes = JsonConvert.DeserializeObject<DeskQuote[]>(fileData).ToList();
-
             }
-            catch { 
-                
-        
-            }
+            catch { }
             
-
-
             if (filterMaterial != filterByMaterial.None)
             {
                 // filter
                 List<DeskQuote> filteredQuotes = quotes.Where(q => q.desk.material.ToString() == filterMaterial.ToString()).ToList();
                 return filteredQuotes;
-
             } else
             {
                 return quotes;
@@ -76,7 +68,7 @@ namespace MegaDesk
         /// <param name="quote"></param>
         /// <param name="fileName"></param>
         /// 
-        public void AddToFile(DeskQuote quote, string fileName = defaultFileName)
+        public void AddQuoteToFile(DeskQuote quote, string fileName = defaultFileName)
         {
             // load existing file
             List<DeskQuote> quotes = this.LoadQuotes(fileName);
@@ -87,6 +79,22 @@ namespace MegaDesk
             // save
             var jsonString = JsonConvert.SerializeObject(quotes, Formatting.Indented);
             File.WriteAllText(fileName, jsonString);
+        }
+
+        /// <summary>
+        /// 
+        /// Reads a text file, returns as string
+        /// 
+        /// </summary>
+        /// 
+        /// <param name="fileName"></param>
+        /// 
+        public string readTextFile(string fileName = defaultFileName)
+        {
+            // load file
+            string fileData = File.ReadAllText(fileName);
+
+            return fileData;
         }
     }
 }
