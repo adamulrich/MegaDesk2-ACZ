@@ -18,7 +18,7 @@ namespace TestProject1
         }
 
         [Test]
-        public void SaveToFile_LoadFromFile()
+        public void SaveToFile_LoadFromFileRandom()
         {
             MegaDesk.JsonPersistence jp = new MegaDesk.JsonPersistence();
             
@@ -36,6 +36,70 @@ namespace TestProject1
             quote.productionTime = TestHelpers.RandomEnumValue<productionTime>();
             quote.calculatePrice();
             
+            jp.AddQuoteToFile(quote);
+
+            List<DeskQuote> quoteData = jp.LoadQuotes();
+            DeskQuote lastQuote = quoteData.Last();
+            Assert.That(quote.customerName == lastQuote.customerName, "Customer Name Not Equal");
+            Assert.That(quote.price == lastQuote.price, "Price Not Equal");
+            Assert.That(quote.desk.depth == lastQuote.desk.depth, "desk depth Not Equal");
+            Assert.That(quote.desk.width == lastQuote.desk.width, "desk width Not Equal");
+            Assert.That(quote.desk.material == lastQuote.desk.material, "desk material Not Equal");
+            Assert.That(quote.desk.drawer_count == lastQuote.desk.drawer_count, "desk drawer count Not Equal");
+            Assert.That(quote.date == lastQuote.date, "date Not Equal");
+            Assert.That(quote.productionTime == lastQuote.productionTime, "production time Not Equal");
+
+
+        }
+
+        public void SaveToFile_LoadFromFileMinValues()
+        {
+            MegaDesk.JsonPersistence jp = new MegaDesk.JsonPersistence();
+
+            DeskQuote quote = new DeskQuote();
+
+            var textInfo = new CultureInfo("en-US", false).TextInfo;
+
+
+            quote.customerName = textInfo.ToTitleCase(TestHelpers.RandomString(TestHelpers.random.Next(3, 10))) + " " + textInfo.ToTitleCase(TestHelpers.RandomString(TestHelpers.random.Next(3, 10)));
+            quote.desk.depth = 12;
+            quote.desk.width = 24;
+            quote.desk.material = TestHelpers.RandomEnumValue<material>();
+            quote.desk.drawer_count = 0;
+            quote.date = DateTime.Now;
+            quote.productionTime = TestHelpers.RandomEnumValue<productionTime>();
+            quote.calculatePrice();
+
+            jp.AddQuoteToFile(quote);
+
+            List<DeskQuote> quoteData = jp.LoadQuotes();
+            DeskQuote lastQuote = quoteData.Last();
+            Assert.That(quote.customerName == lastQuote.customerName, "Customer Name Not Equal");
+            Assert.That(quote.price == lastQuote.price, "Price Not Equal");
+            Assert.That(quote.desk.depth == lastQuote.desk.depth, "desk depth Not Equal");
+            Assert.That(quote.desk.width == lastQuote.desk.width, "desk width Not Equal");
+            Assert.That(quote.desk.material == lastQuote.desk.material, "desk material Not Equal");
+            Assert.That(quote.desk.drawer_count == lastQuote.desk.drawer_count, "desk drawer count Not Equal");
+            Assert.That(quote.date == lastQuote.date, "date Not Equal");
+            Assert.That(quote.productionTime == lastQuote.productionTime, "production time Not Equal");
+        }
+        public void SaveToFile_LoadFromFileRandomMaxValues()
+        {
+            MegaDesk.JsonPersistence jp = new MegaDesk.JsonPersistence();
+
+            DeskQuote quote = new DeskQuote();
+
+            var textInfo = new CultureInfo("en-US", false).TextInfo;
+
+            quote.customerName = textInfo.ToTitleCase(TestHelpers.RandomString(TestHelpers.random.Next(3, 10))) + " " + textInfo.ToTitleCase(TestHelpers.RandomString(TestHelpers.random.Next(3, 10)));
+            quote.desk.depth = 48;
+            quote.desk.width = 96;
+            quote.desk.material = TestHelpers.RandomEnumValue<material>();
+            quote.desk.drawer_count = 7;
+            quote.date = DateTime.Now;
+            quote.productionTime = TestHelpers.RandomEnumValue<productionTime>();
+            quote.calculatePrice();
+
             jp.AddQuoteToFile(quote);
 
             List<DeskQuote> quoteData = jp.LoadQuotes();

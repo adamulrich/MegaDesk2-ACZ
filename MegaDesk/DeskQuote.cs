@@ -42,8 +42,18 @@ namespace MegaDesk
 
         public DateTime date { get; set; }
 
+        private void loadRushPrices()
+        {
+
+        }
+
+
         public void calculatePrice()
         {
+
+            // load rush price data, and replace hardcoded data in Dictionary<productionTime> values with the new values
+            loadRushPrices();
+
             // calculate size of desk and drawers and material
             int deskPrice = BASE_COST + 
                             (this.desk.drawer_count * DRAWER_COST ) +
