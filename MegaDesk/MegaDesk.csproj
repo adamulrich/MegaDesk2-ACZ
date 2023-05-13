@@ -113,6 +113,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="resources\quotes.json" />
+    <None Include="resources\testdata\quotes.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
