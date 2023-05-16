@@ -34,7 +34,7 @@ namespace MegaDesk
             this.Close();
         }
 
-        public void updateQuote()
+        public bool updateQuote()
         {
             try
             {
@@ -48,18 +48,32 @@ namespace MegaDesk
                 deskQuote.productionTime = (productionTime)this.cbo_DeliverySpeed.SelectedItem;
                 deskQuote.calculatePrice();
                 this.lbl_Price.Text = deskQuote.price.ToString();
+                
+                if(deskQuote.customerName.Length < 1)
+                {
+                    return false;
+                }
+                return true;
             }
             catch (Exception e)
             {
                 // unable to calculate price
                 this.lbl_Price.Text = "Unable to Calculate";
-
+                return false;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            updateQuote();
+            if(updateQuote())
+            {
+                JsonPersistence jp = new JsonPersistence();
+                jp.AddQuoteToFile(deskQuote);
+
+                MainMenu MainMenuForm = (MainMenu)this.Tag;
+                MainMenuForm.Show();
+                this.Hide();
+            }
         }
 
         private void AddQuote_FormClosing(object sender, FormClosingEventArgs e)
