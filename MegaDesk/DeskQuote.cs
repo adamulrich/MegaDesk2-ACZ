@@ -11,7 +11,7 @@ namespace MegaDesk
 {
     public class DeskQuote
     {
-        const string rushOrderPricesFile = "rushOrderPrices.txt";
+        const string rushOrderPricesFile = "resources/rushOrderPrices.txt";
 
         int BASE_COST = 200;
         int SURFACE_AREA_COST_INCREASE_SIZE = 1000;
@@ -27,6 +27,8 @@ namespace MegaDesk
             { material.Veneer, 125 }
         };
 
+
+        // fallback data
         Dictionary<productionTime, int[]> rushCost = new Dictionary<productionTime, int[]>()
         {
             {productionTime.rush3Days, new int[] {60,70,80 } },
@@ -61,8 +63,8 @@ namespace MegaDesk
                         rushOrderPrices[i, j] = int.Parse(value.Trim());
                         j++;
                     }
-                    i++;
-                    j = 0;
+                    if (j == 3) { i++; j = 0; }
+                  
                 }
                 rushCost[productionTime.rush3Days] = new int[] { rushOrderPrices[0, 0], rushOrderPrices[0, 1], rushOrderPrices[0, 2] };
                 rushCost[productionTime.rush5Days] = new int[] { rushOrderPrices[1, 0], rushOrderPrices[1, 1], rushOrderPrices[1, 2] };

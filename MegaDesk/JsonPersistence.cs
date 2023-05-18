@@ -17,7 +17,7 @@ namespace MegaDesk
     /// </summary>
     public class JsonPersistence
     {
-        const string defaultFileName = "quotes.json";
+        const string defaultFileName = "resources/quotes.json";
 
 
         /// <summary>
