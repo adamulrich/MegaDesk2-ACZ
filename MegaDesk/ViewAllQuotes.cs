@@ -12,17 +12,16 @@ namespace MegaDesk
 {
     public partial class ViewAllQuotes : Form
     {
-        List<DeskQuote> data;
+        //List<DeskQuote> data;
         public ViewAllQuotes()
         {
             InitializeComponent();
-            
-            JsonPersistence jp = new JsonPersistence();
-            data = jp.LoadQuotes();
         }
 
         private void ViewAllQuotes_Load(object sender, EventArgs e)
         {
+            JsonPersistence jp = new JsonPersistence();
+            List<DeskQuote> data = jp.LoadQuotes();
             dataGridView1.DataSource = data;
         }
 
