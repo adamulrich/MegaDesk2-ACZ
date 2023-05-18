@@ -4,11 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+
 
 namespace MegaDesk
 {
     public class DeskQuote
     {
+        const string rushOrderPricesFile = "rushOrderPrices.txt";
 
         int BASE_COST = 200;
         int SURFACE_AREA_COST_INCREASE_SIZE = 1000;
@@ -42,9 +45,33 @@ namespace MegaDesk
 
         public DateTime date { get; set; }
 
-        private void loadRushPrices()
+        private void getRushPrices(string fileName = rushOrderPricesFile)
         {
-
+            try
+            {
+                string[] lines = File.ReadAllLines(fileName);
+                int[,] rushOrderPrices = new int[3, 3];
+                int i = 0;
+                int j = 0;
+                foreach (string line in lines)
+                {
+                    string[] values = line.Split(',');
+                    foreach (string value in values)
+                    {
+                        rushOrderPrices[i, j] = int.Parse(value.Trim());
+                        j++;
+                    }
+                    i++;
+                    j = 0;
+                }
+                rushCost[productionTime.rush3Days] = new int[] { rushOrderPrices[0, 0], rushOrderPrices[0, 1], rushOrderPrices[0, 2] };
+                rushCost[productionTime.rush5Days] = new int[] { rushOrderPrices[1, 0], rushOrderPrices[1, 1], rushOrderPrices[1, 2] };
+                rushCost[productionTime.rush7Days] = new int[] { rushOrderPrices[2, 0], rushOrderPrices[2, 1], rushOrderPrices[2, 2] };
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
         }
 
 
@@ -52,7 +79,7 @@ namespace MegaDesk
         {
 
             // load rush price data, and replace hardcoded data in Dictionary<productionTime> values with the new values
-            loadRushPrices();
+            getRushPrices();
 
             // calculate size of desk and drawers and material
             int deskPrice = BASE_COST + 
